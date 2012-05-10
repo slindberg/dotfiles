@@ -1,0 +1,58 @@
+[core]
+  # global gitignore
+  excludesfile = ~/.gitignore-global
+  # this is the default, but make sure anyway :)
+  editor = /usr/bin/vim
+  # make pager use tabstops of 4 spaces instead of 8 (also don't wrap lines)
+  pager = /usr/bin/less -S -x4
+[user]
+  # information about you that will appear in commit history
+  name = Steven Lindberg
+  email = stevenjohnlindberg@gmail.com
+[help]
+  # if git doesn't recognize a command, wait three seconds then execute the closest match
+  autocorrect = 30
+[color]
+  # yay, color for everything
+  diff = auto
+  status = auto
+  branch = auto
+[apply]
+  # ignore trailing whitespace
+  whitespace = nowarn
+[branch]
+  # setup newly created tracking branches to rebase (on pull) by default
+  autosetupmerge = true
+  autosetuprebase = remote
+[rebase]
+  # use new 1.7.4 autosquash goodness (commit messages beginning with 'fixup!' or 'squash!)
+  autosquash = true
+[push]
+  # pushes current (tracking) branch to it's upstream branch without having to specify
+  default = upstream
+[alias]
+  ai = add --interactive
+  ap = add --patch
+  d = diff
+  dc = diff --cached
+  b = branch
+  ba = branch -a
+  ci = commit
+  cia = commit --amend
+  ciaa = commit --amend -a
+  cif = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  cim = commit -m
+  cima = commit -a -m
+  co = checkout
+  cp = cherry-pick
+  ri = rebase --interactive
+  rc = rebase --continue
+  ra = rebase --abort
+  rp = remote prune origin
+  sh = show HEAD
+  sl = stash list
+  sp = stash pop
+  ss = stash save
+  st = status
+  l = log -n 15 --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s%n'
+  wc = whatchanged -n 1
