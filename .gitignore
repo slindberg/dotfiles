@@ -1,0 +1,12 @@
+# ignore all files that don't start with a dot by default
+*
+!.*
+
+# ignore history files
+.bash_history
+.viminfo
+
+# ignore OS X files
+.CFUserTextEncoding
+.DS_Store
+.Trash
