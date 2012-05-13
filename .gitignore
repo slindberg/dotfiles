@@ -6,6 +6,11 @@
 .bash_history
 .viminfo
 
+# ignore vim files, they are maintained separately
+.vim
+.vimrc
+.gvimrc
+
 # ignore OS X files
 .CFUserTextEncoding
 .DS_Store
