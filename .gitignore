@@ -2,16 +2,21 @@
 *
 !.*
 
-# ignore history files
+# history files
 .bash_history
 .viminfo
+.lesshst
+.mysql_history
 
-# ignore vim files, they are maintained separately
+# vim files, they are maintained separately
 .vim
 .vimrc
 .gvimrc
 
-# ignore OS X files
+# OS X files
 .CFUserTextEncoding
 .DS_Store
 .Trash
+
+# misc
+.pearrc
