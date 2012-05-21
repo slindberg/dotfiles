@@ -10,8 +10,9 @@ alias ...='cd .. ; cd ..'
 # grep'n
 alias grep='grep -n'
 alias rgrep='grep -r'
-alias psgrep='ps aux | grep '
+alias psgrep='ps aux | grep'
 
 # misc
 alias top='top -o cpu'
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
+alias tree='tree -C --dirsfirst'
