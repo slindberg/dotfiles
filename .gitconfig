@@ -49,6 +49,7 @@
   rc = rebase --continue
   ra = rebase --abort
   rp = remote prune origin
+	rs = remote show origin
   sh = show HEAD
   sl = stash list
   sp = stash pop
