@@ -1,6 +1,6 @@
 [core]
   # global gitignore
-  excludesfile = ~/.gitignore-global
+  excludesfile = ~/.cvsignore
   # this is the default, but make sure anyway :)
   editor = /usr/bin/vim
   # make pager use tabstops of 4 spaces instead of 8 (also don't wrap lines)
