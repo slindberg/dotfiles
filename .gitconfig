@@ -31,29 +31,52 @@
   # pushes current (tracking) branch to it's upstream branch without having to specify
   default = upstream
 [alias]
-  ai = add --interactive
-  ap = add --patch
+  # checkout
+  co = checkout
+  # diffing
   d = diff
   dc = diff --cached
-  b = branch
-  ba = branch -a
+  # adding
+  aa = add .
+  ai = add --interactive
+  ap = add --patch
+  # commiting
   ci = commit
   cia = commit --amend
   ciaa = commit --amend -a
   cif = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
   cim = commit -m
   cima = commit -a -m
-  co = checkout
-  cp = cherry-pick
+  # branching
+  b = branch
+  ba = branch -a
+  bc = branch --contains
+  bd = branch -d
+  bdd = branch -D
+  bm = branch -m
+  # merging
+  m = merge
+  ms = merge --squash
+  mf = merge --no-ff
+  # rebasing
+  r = rebase
   ri = rebase --interactive
   rc = rebase --continue
   ra = rebase --abort
+  # cherry-picking
+  cp = cherry-pick
+  cpc = cherry-pick --continue
+  cpa = cherry-pick --abort
+  # remotes
   rp = remote prune origin
-	rs = remote show origin
-  sh = show HEAD
+  rs = remote show origin
+  # stashing
   sl = stash list
   sp = stash pop
   ss = stash save
+  # viewing
   st = status
-  l = log -n 15 --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s%n'
+  sh = show
+  l = log --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s%n'
+  ls = log -n 12 --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s%n'
   wc = whatchanged -n 1
