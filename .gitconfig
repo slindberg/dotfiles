@@ -33,10 +33,12 @@
 [alias]
   # checkout
   co = checkout
+  cob = checkout -b
   # diffing
   d = diff
   dc = diff --cached
   # adding
+  a = add
   aa = add .
   ai = add --interactive
   ap = add --patch
@@ -74,6 +76,9 @@
   sl = stash list
   sp = stash pop
   ss = stash save
+  # fetching/pulling/pushing
+  f = fetch
+  p = pull
   # viewing
   st = status
   sh = show
