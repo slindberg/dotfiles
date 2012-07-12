@@ -72,6 +72,9 @@
   # remotes
   rp = remote prune origin
   rs = remote show origin
+  # submodules
+  smi = submodule init
+  smu = submodule update --recursive
   # stashing
   sl = stash list
   sp = stash pop
