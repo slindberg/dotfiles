@@ -1,7 +1,17 @@
+# add any system specific paths
+if [ -f ~/.paths ]; then
+  while read line; do
+    PATH=$line:$PATH
+  done < ~/.paths
+fi
+
 # add personal bin folder to path
 if [ -d ~/.bin ]; then
-	export PATH=:~/.bin:$PATH
+	PATH=~/.bin:$PATH
 fi
+
+# export PATH to the shell
+export PATH
 
 # set default commands
 export EDITOR=vim
