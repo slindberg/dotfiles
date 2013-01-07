@@ -16,3 +16,4 @@ alias psgrep='ps aux | grep'
 alias top='top -o cpu'
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias tree='tree -C --dirsfirst'
+alias listen='lsof -i | \grep LISTEN' # Lists processes that are listening on a port
