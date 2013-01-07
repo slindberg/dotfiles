@@ -10,7 +10,7 @@ alias ...='cd .. ; cd ..'
 # grep'n
 alias grep='grep -n'
 alias rgrep='grep -r'
-alias psgrep='ps aux | grep'
+alias psgrep='ps aux | \grep'
 
 # misc
 alias top='top -o cpu'
