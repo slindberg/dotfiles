@@ -9,9 +9,6 @@
   # information about you that will appear in commit history
   name = Steven Lindberg
   email = stevenjohnlindberg@gmail.com
-[help]
-  # if git doesn't recognize a command, wait three seconds then execute the closest match
-  autocorrect = 30
 [color]
   # yay, color for everything
   diff = auto
@@ -40,6 +37,7 @@
   # adding
   a = add
   aa = add .
+  au = add -u
   ai = add --interactive
   ap = add --patch
   # commiting
@@ -79,6 +77,9 @@
   sl = stash list
   sp = stash pop
   ss = stash save
+  # resetting
+  re = reset
+  reh = reset --hard
   # fetching/pulling/pushing
   f = fetch
   p = pull
