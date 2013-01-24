@@ -5,7 +5,7 @@ alias la='ls -lha'
 
 # cd is hard too
 alias ..='cd ..'
-alias ...='cd .. ; cd ..'
+alias ...='cd ../..'
 
 # grep'n
 alias grep='grep -n'
