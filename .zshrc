@@ -23,3 +23,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Include shell-agnostic resource file
 [[ -s "$HOME/.shrc" ]] && source "$HOME/.shrc"
+
+# Fix using the special globbing character ^ (for git)
+unsetopt nomatch
