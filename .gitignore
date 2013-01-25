@@ -2,8 +2,12 @@
 *
 !.*
 
+#oh-my-zsh
+.oh-my-zsh
+.zsh
+
 # history files
-.bash_history
+.zsh_history
 .viminfo
 .lesshst
 .mysql_history
@@ -21,5 +25,5 @@
 .Trash
 
 # misc
-.paths
+.zcompdump
 .pearrc

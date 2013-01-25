@@ -1,12 +1,3 @@
-# ls is hard
-alias ls='ls -G' # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
-alias ll='ls -lh'
-alias la='ls -lha'
-
-# cd is hard too
-alias ..='cd ..'
-alias ...='cd ../..'
-
 # grep'n
 alias grep='grep -n'
 alias rgrep='grep -r'

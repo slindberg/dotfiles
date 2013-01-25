@@ -1,0 +1,29 @@
+# Add system specific paths
+if [ -f ~/.paths ]; then
+  while read dir; do
+    if [ -d $dir ]; then
+      PATH=$dir:$PATH
+    fi
+  done < ~/.paths
+fi
+
+# Add custom scripts to the path
+if [ -d ~/.scripts ]; then
+	PATH=~/.scripts:$PATH
+fi
+
+# Now export it
+export PATH
+
+# Set default commands
+export EDITOR=vim
+export GIT_EDITOR=vim
+export PAGER=less
+
+# If not running interactively, skip the rest
+[ -z "$PS1" ] && return
+
+# Include aliases
+if [ -f ~/.aliases ]; then
+	source ~/.aliases
+fi
