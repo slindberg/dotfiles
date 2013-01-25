@@ -1,3 +1,4 @@
+# vim: set ft=zsh:
 # Add system specific paths
 if [ -f ~/.paths ]; then
   while read dir; do
@@ -17,8 +18,10 @@ export PATH
 
 # Set default commands
 export EDITOR=vim
-export GIT_EDITOR=vim
 export PAGER=less
+
+# Default less options, the FX causes short files to be displayed inline
+export LESS=-iFXRx4
 
 # If not running interactively, skip the rest
 [ -z "$PS1" ] && return
