@@ -1,0 +1,10 @@
+--smart-case
+--follow
+--type-set=json=.json
+--type-set=coffee=.coffee
+--type-set=less=.less
+--type-set=markdown=.md,.mkdn,.markdown
+--type-set=haml=.haml
+--type-set=scss=.scss
+--type-set=eco=.eco
+--type-set=csv=.txt,.csv,.tsv
