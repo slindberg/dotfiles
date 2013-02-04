@@ -24,6 +24,8 @@
   # pushes current (tracking) branch to it's upstream branch without having to specify
   default = upstream
 [alias]
+  # cloning
+  cl = clone
   # checkout
   co = checkout
   cob = checkout -b
@@ -67,6 +69,7 @@
   rp = remote prune origin
   rs = remote show origin
   # submodules
+  sma = submodule add
   smi = submodule init
   smu = submodule update --recursive
   # stashing
