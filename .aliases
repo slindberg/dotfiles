@@ -3,13 +3,24 @@ alias l='clear && ll'
 alias gs='clear && git st'
 alias gl='clear && git ls'
 
-# grep'n
-alias grep='grep -n'
-alias rgrep='grep -r'
-alias psgrep='ps aux | \grep'
+# ease background process manipulation
+alias j='jobs'
+alias f='fg'
+alias b='bg'
+alias k='kill'
 
-# misc
-alias top='top -o cpu'
-alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
+# search processes
+alias psgrep='ps aux | grep'
+
+# show top processes sorted by cpu usage or real memory
+alias cpu='top -o cpu'
+alias mem='top -o vsize'
+
+# enable color and always list directories first
 alias tree='tree -C --dirsfirst'
-alias listen='lsof -i | \grep LISTEN' # Lists processes that are listening on a port
+
+# lists processes that are listening on a port
+alias listen='lsof -i | grep LISTEN'
+
+# list human readable size of files and dirs in cwd
+alias duch='du -csh *'
