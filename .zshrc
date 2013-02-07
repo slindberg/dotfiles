@@ -26,3 +26,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Fix using the special globbing character ^ (for git)
 unsetopt nomatch
+
+# don't add commands that begin with a space to the history
+setopt histignorespace
