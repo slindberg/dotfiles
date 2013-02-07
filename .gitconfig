@@ -75,7 +75,9 @@
   # stashing
   sl = stash list
   sp = stash pop
+  sa = stash apply
   ss = stash save
+  sd = stash drop
   # resetting
   re = reset
   reh = reset --hard
