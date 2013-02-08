@@ -17,7 +17,7 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Load oh-my-zsh plugins
-plugins=(history-substring-search osx brew git npm pip encode64 urltools)
+plugins=(history-substring-search osx brew gitfast npm pip encode64 urltools)
 
 source $ZSH/oh-my-zsh.sh
 
