@@ -9,6 +9,9 @@ alias f='fg'
 alias b='bg'
 alias k='kill'
 
+# force re-make
+alias fake='make clean && make'
+
 # search processes
 alias psgrep='ps aux | grep'
 
