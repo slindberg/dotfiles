@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # Print local network and external IP addresses
 function ip {
   echo "Local:    $(ipconfig getifaddr en0)"

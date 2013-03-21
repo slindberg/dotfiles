@@ -1,4 +1,5 @@
-# vim: set ft=zsh:
+# vim: ft=zsh
+
 # Add system specific paths
 if [ -f ~/.paths ]; then
   while read dir; do
