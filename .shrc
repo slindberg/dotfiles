@@ -10,7 +10,7 @@ fi
 
 # Add custom scripts to the path
 if [ -d ~/.scripts ]; then
-	PATH=~/.scripts:$PATH
+  PATH=~/.scripts:$PATH
 fi
 
 # Now export it
@@ -28,5 +28,5 @@ export LESS=-iFXRx4
 
 # Include aliases
 if [ -f ~/.aliases ]; then
-	source ~/.aliases
+  source ~/.aliases
 fi
