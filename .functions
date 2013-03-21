@@ -5,3 +5,13 @@ function ip {
   echo "Local:    $(ipconfig getifaddr en0)"
   echo "External: $(curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g')"
 }
+
+# Print the number of files/dirs in the given directory
+function lc {
+  local list="ls -l \"$1\" | grep -v '^total'"
+  local count="wc -l | awk '{ print \$1 }'"
+
+  echo "Files: $(eval "$list | grep -v '^d' | $count")"
+  echo "Dirs:  $(eval "$list | grep '^d' | $count")"
+  echo "Total: $(eval "$list | $count")"
+}
