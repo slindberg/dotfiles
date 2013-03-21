@@ -13,6 +13,11 @@ if [ -d ~/.scripts ]; then
   PATH=~/.scripts:$PATH
 fi
 
+# Include functions
+if [ -f ~/.functions ]; then
+  source ~/.functions
+fi
+
 # Now export it
 export PATH
 

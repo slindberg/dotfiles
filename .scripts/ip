@@ -1,6 +1,0 @@
-#!/bin/sh
-
-LOCALIP=`ipconfig getifaddr en0`
-EXTERNALIP=`curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'`
-
-echo "Local:    $LOCALIP\nExternal: $EXTERNALIP"
