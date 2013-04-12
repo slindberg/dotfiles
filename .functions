@@ -15,3 +15,8 @@ function lc {
   echo "Dirs:  $(eval "$list | grep '^d' | $count")"
   echo "Total: $(eval "$list | $count")"
 }
+
+# Resolve redirects and print the last non-30x URL
+function url {
+  curl $1 --silent --location --head --output /dev/null --write-out 'Final URL: %{url_effective}'
+}
