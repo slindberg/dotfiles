@@ -14,11 +14,6 @@ if [ -d ~/.scripts ]; then
   PATH=~/.scripts:$PATH
 fi
 
-# Include functions
-if [ -f ~/.functions ]; then
-  source ~/.functions
-fi
-
 # Now export it
 export PATH
 
@@ -28,6 +23,11 @@ export PAGER=less
 
 # Default less options, the FX causes short files to be displayed inline
 export LESS=-iFXRx4
+
+# Include functions
+if [ -f ~/.functions ]; then
+  source ~/.functions
+fi
 
 # If not running interactively, skip the rest
 [ -z "$PS1" ] && return
