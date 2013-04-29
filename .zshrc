@@ -24,8 +24,19 @@ source $ZSH/oh-my-zsh.sh
 # Include shell-agnostic resource file
 [[ -s "$HOME/.shrc" ]] && source "$HOME/.shrc"
 
+# Add some variables for easy colors (http://pthree.org/2009/12/18/add-colors-to-your-zsh-scripts/)
+autoload colors
+if [[ "$terminfo[colors]" -gt 8 ]]; then
+    colors
+fi
+for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
+    eval $COLOR='$fg_no_bold[${(L)COLOR}]'
+    eval BOLD_$COLOR='$fg_bold[${(L)COLOR}]'
+done
+eval RESET='$reset_color'
+
 # Fix using the special globbing character ^ (for git)
 unsetopt nomatch
 
-# don't add commands that begin with a space to the history
+# Don't add commands that begin with a space to the history
 setopt histignorespace
