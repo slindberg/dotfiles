@@ -1,31 +1,43 @@
 # vim: ft=zsh
 
-# clear the screen before the most common commands
+# Always use MacVim if available
+if exists mvim; then
+  alias vim='mvim -v'
+fi
+
+# Profiling mode for Vim (use ':profile continue' to start profiling)
+alias pvim="vim \
+  --cmd 'profile start /tmp/vimprofile.log' \
+  --cmd 'profile! file *' \
+  --cmd 'profile pause' \
+  --cmd 'autocmd VimLeave profdel file *'"
+
+# Clear the screen before the most common commands
 alias l='clear && ll'
 alias gs='clear && git st'
 alias gl='clear && git ls'
 
-# ease background process manipulation
+# Ease background process manipulation
 alias j='jobs'
 alias f='fg'
 alias b='bg'
 alias k='kill'
 
-# force re-make
+# Force re-make
 alias fake='make clean && make'
 
-# search processes
+# Search processes
 alias psgrep='ps aux | grep'
 
-# show top processes sorted by cpu usage or real memory
+# Show top processes sorted by cpu usage or real memory
 alias cpu='top -o cpu'
 alias mem='top -o vsize'
 
-# enable color and always list directories first
+# Enable color and always list directories first
 alias tree='tree -C --dirsfirst'
 
-# lists processes that are listening on a port
+# Lists processes that are listening on a port
 alias listen='lsof -i | grep LISTEN'
 
-# list human readable size of files and dirs in cwd
+# List human readable size of files and dirs in cwd
 alias duch='du -csh *'
