@@ -21,8 +21,18 @@ plugins=(history-substring-search osx brew gitfast npm pip encode64 urltools)
 
 source $ZSH/oh-my-zsh.sh
 
-# Include shell-agnostic resource file
-[[ -s "$HOME/.shrc" ]] && source "$HOME/.shrc"
+# Include functions
+if [ -f ~/.functions ]; then
+  source ~/.functions
+fi
+
+# Include aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
+
+# Include environment varibles
+[[ -s "$HOME/.env" ]] && source "$HOME/.env"
 
 # Add some variables for easy colors (http://pthree.org/2009/12/18/add-colors-to-your-zsh-scripts/)
 autoload colors
