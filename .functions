@@ -25,7 +25,9 @@ function ip {
 
 # Print the number of files/dirs in the given directory
 function lc {
-  local list="ls -l \"$1\" | grep -v '^total'"
+  local dir=$1
+  : ${dir:="."}
+  local list="ls -l \"$dir\" | grep -v '^total'"
   local count="wc -l | awk '{ print \$1 }'"
 
   echo "Files: $(eval "$list | grep -v '^d' | $count")"
