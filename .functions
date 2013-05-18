@@ -13,8 +13,18 @@ function assert_exists {
     else
       echo -e "${RED}Could not find command '$1' in path.${RESET}"
     fi
-    # exit 1
+    exit 1
   fi
+}
+
+# Print the extension of a file given its full path
+function extension {
+  echo "${$(basename $1)##*.}"
+}
+
+# Print the name of a file (without extension) given its full path
+function filename {
+  echo "${$(basename $1)%.*}"
 }
 
 # Print local network and external IP addresses
@@ -36,6 +46,6 @@ function lc {
 }
 
 # Resolve redirects and print the last non-30x URL
-function url {
+function end_url {
   curl $1 --silent --location --head --output /dev/null --write-out 'Final URL: %{url_effective}'
 }
