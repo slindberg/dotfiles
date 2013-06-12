@@ -27,6 +27,13 @@ function filename {
   echo "${$(basename $1)%.*}"
 }
 
+# Change to a temp directory
+function tmp {
+  local dir=$TMPDIR
+  : ${dir:="/tmp"}
+  cd $dir
+}
+
 # Print local network and external IP addresses
 function ip {
   echo "Local:    $(ipconfig getifaddr en0)"
