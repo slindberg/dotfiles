@@ -34,6 +34,13 @@ fi
 # Include environment varibles
 [[ -s "$HOME/.env" ]] && source "$HOME/.env"
 
+# Include all brew-installed init scripts
+if [ -d "$(brew --prefix)/etc/profile.d" ]; then
+  for file in $(brew --prefix)/etc/profile.d/*; do
+    source $file
+  done
+fi
+
 # Add some variables for easy colors (http://pthree.org/2009/12/18/add-colors-to-your-zsh-scripts/)
 autoload colors
 if [[ "$terminfo[colors]" -gt 8 ]]; then
