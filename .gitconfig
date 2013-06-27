@@ -80,6 +80,7 @@
   sd = stash drop
   # resetting
   re = reset
+  rep = reset HEAD^
   reh = reset --hard
   # ignoring
   au = update-index --assume-unchanged
