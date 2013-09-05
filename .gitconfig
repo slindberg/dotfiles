@@ -34,28 +34,27 @@
   dc = diff --cached
   # adding
   a = add
-  aa = add .
-  au = add -u
+  aa = add --all
+  au = add --update
   ai = add --interactive
   ap = add --patch
   # commiting
   ci = commit
   cia = commit --amend
-  ciaa = commit --amend -a
-  cif = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  ciaa = commit --amend --all
+  cif = commit --fixup
   cim = commit -m
-  cima = commit -a -m
+  cima = commit --all -m
   # branching
   b = branch
-  ba = branch -a
+  ba = branch --all
   bc = branch --contains
-  bd = branch -d
+  bd = branch --delete
   bdd = branch -D
-  bm = branch -m
+  bm = branch --move
   # merging
   m = merge
-  ms = merge --squash
-  mf = merge --no-ff
+  mnf = merge --no-ff
   # rebasing
   r = rebase
   ri = rebase --interactive
