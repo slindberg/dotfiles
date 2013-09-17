@@ -40,11 +40,13 @@
   ap = add --patch
   # commiting
   ci = commit
-  cia = commit --amend
-  ciaa = commit --amend --all
-  cif = commit --fixup
   cim = commit -m
   cima = commit --all -m
+  cia = commit --amend
+  cir = commit --amend --reuse-message HEAD
+  cira = commit --amend --all --reuse-message HEAD
+  cif = commit --fixup
+  cifa = commit --all --fixup
   # branching
   b = branch
   ba = branch --all
@@ -57,7 +59,7 @@
   mnf = merge --no-ff
   # rebasing
   r = rebase
-  ri = rebase --interactive
+  ri = rebase --interactive --autostash
   rc = rebase --continue
   ra = rebase --abort
   # cherry-picking
