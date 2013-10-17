@@ -57,3 +57,6 @@ unsetopt nomatch
 
 # Don't add commands that begin with a space to the history
 setopt histignorespace
+
+# Stop trying to auto-correct git aliases
+alias git='nocorrect git'
