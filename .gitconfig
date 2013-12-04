@@ -77,7 +77,7 @@
   sl = stash list
   sp = stash pop
   sa = stash apply
-  ss = stash save
+  ss = stash save --include-untracked
   sd = stash drop
   # resetting
   re = reset
