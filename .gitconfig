@@ -38,7 +38,7 @@
   au = add --update
   ai = add --interactive
   ap = add --patch
-  # commiting
+  # committing
   ci = commit
   cim = commit -m
   cima = commit --all -m
