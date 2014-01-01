@@ -79,6 +79,7 @@
   sa = stash apply
   ss = stash save --include-untracked
   sd = stash drop
+  ssh = show stash@{0}
   # resetting
   re = reset
   rep = reset HEAD^
