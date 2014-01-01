@@ -84,8 +84,8 @@
   rep = reset HEAD^
   reh = reset --hard
   # ignoring
-  au = update-index --assume-unchanged
-  nau = update-index --no-assume-unchanged
+  i = update-index --assume-unchanged
+  ni = update-index --no-assume-unchanged
   # fetching/pulling/pushing
   f = fetch
   p = pull
