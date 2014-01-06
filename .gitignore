@@ -2,7 +2,10 @@
 *
 !.*
 
-#oh-my-zsh
+# environment variables
+.env
+
+# oh-my-zsh
 .oh-my-zsh
 .zsh
 

@@ -31,14 +31,44 @@ if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
 
-# Include environment varibles
+# Include environment variables
 [[ -s "$HOME/.env" ]] && source "$HOME/.env"
 
 # Include all brew-installed init scripts
-if [ -d "$(brew --prefix)/etc/profile.d" ]; then
+if  exists 'brew' && [ -d "$(brew --prefix)/etc/profile.d" ]; then
   for file in $(brew --prefix)/etc/profile.d/*; do
     source $file
   done
+fi
+
+# Add system specific paths
+if [ -f ~/.paths ]; then
+  while read dir; do
+    if [ -d $dir ]; then
+      PATH=$dir:$PATH
+    fi
+  done < ~/.paths
+fi
+
+# Custom scripts
+if [ -d ~/.scripts ]; then
+  PATH=~/.scripts:$PATH
+fi
+
+export PATH
+
+# Default editor
+export EDITOR=vim
+
+# Default Pager
+export PAGER=less
+
+# Default less options, the FX causes short files to be displayed inline
+export LESS=-iFXRx4
+
+# Add lesspipe.sh if available
+if exists lesspipe.sh; then
+  export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
 # Add some variables for easy colors (http://pthree.org/2009/12/18/add-colors-to-your-zsh-scripts/)
