@@ -3,8 +3,8 @@
 --type-set=json=.json
 --type-set=coffee=.coffee
 --type-set=less=.less
---type-set=markdown=.md,.mkdn,.markdown
---type-set=handlebars=.handlebars,.hbs
+--type-set=md=.md,.mkdn,.markdown
+--type-set=hbs=.handlebars,.hbs
 --type-set=haml=.haml
 --type-set=scss=.scss
 --type-set=eco=.eco
