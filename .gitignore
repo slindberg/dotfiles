@@ -2,25 +2,23 @@
 *
 !.*
 
-# environment variables
-.env
-
 # oh-my-zsh
 .oh-my-zsh
 .zsh
 
-# history files
-.zsh_history
-.viminfo
-.lesshst
-.mysql_history
-.irb-history
-.rdebug_hist
+# environment files
+.*env
 
-# vim files, they are maintained separately
+# history files
+.*history
+.*hist
+.*hst
+
+# vim files
 .vim
 .vimrc
 .gvimrc
+.viminfo
 
 # OS X files
 .CFUserTextEncoding
@@ -31,3 +29,4 @@
 .z
 .zcompdump
 .pearrc
+.NERDTreeBookmarks
