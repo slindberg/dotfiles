@@ -58,7 +58,7 @@ fi
 export PATH
 
 # Default editor
-export EDITOR=vim
+export EDITOR="mvim -v"
 
 # Default Pager
 export PAGER=less
