@@ -1,16 +1,19 @@
-# ignore all files that don't start with a dot by default
+# Ignore all files that don't start with a dot by default
 *
 !.*
 
-# environment files
+# Main config dir
+!.zsh/**
+
+# Environment files
 .*env
 
-# history files
+# History files
 .*history
 .*hist
 .*hst
 
-# vim files
+# Vim files
 .vim
 .vimrc
 .gvimrc
@@ -21,7 +24,7 @@
 .DS_Store
 .Trash
 
-# misc
+# Miscellaneous
 .z
 .zcompdump
 .pearrc
