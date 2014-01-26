@@ -1,27 +1,32 @@
-# vim: ft=zsh
+# Global
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g G='| grep'
+alias -g H='| head -n 30'
+alias -g L='| less'
+alias -g T='| tail -n 30'
+alias -g TF='| tail -f'
+alias -g WC='| wc'
+
+# Navigation
+alias -- -='cd -'
+alias ~='cd ~'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Listing
+alias ls='ls -G'
+alias l='ls -lh'
+alias ll='ls -lhA'
+
+# Git
+alias g=git
 
 # Always use MacVim if available
 if exists mvim; then
   alias vim='mvim -v'
 fi
-
-# Profiling mode for Vim (use ':profile continue' to start profiling)
-alias pvim="vim \
-  --cmd 'profile start /tmp/vimprofile.log' \
-  --cmd 'profile! file *' \
-  --cmd 'profile pause' \
-  --cmd 'autocmd VimLeave profdel file *'"
-
-# Clear the screen before the most common commands
-alias l='clear && ll'
-alias gs='clear && git st'
-alias gl='clear && git ls'
-
-# Ease background process manipulation
-alias j='jobs'
-alias f='fg'
-alias b='bg'
-alias k='kill'
 
 # Force re-make
 alias fake='make clean && make'

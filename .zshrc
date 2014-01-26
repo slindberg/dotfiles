@@ -8,11 +8,6 @@ for func in ${zdotdir}/functions/^_*(-.N:t); do
   autoload -Uz $func
 done
 
-# Include aliases
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
-
 # Include environment variables
 [[ -s "$HOME/.env" ]] && source "$HOME/.env"
 
@@ -40,7 +35,7 @@ fi
 export PATH
 
 # Default editor
-export EDITOR="mvim -v"
+export EDITOR="vim"
 
 # Default Pager
 export PAGER=less
@@ -74,5 +69,7 @@ fi
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 
-# Stop trying to auto-correct git aliases
-alias git='nocorrect git'
+# Source all .zsh files in zdotdir
+for file in ${zdotdir}/*.zsh; do
+  source $file
+done
