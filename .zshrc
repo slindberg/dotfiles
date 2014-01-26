@@ -1,26 +1,3 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Path to custom oh-my-zsh files
-ZSH_CUSTOM=$HOME/.zsh
-
-# Set name of the theme to load.
-ZSH_THEME="arrmaroen"
-
-# Use case-sensitive completion
-CASE_SENSITIVE="true"
-
-# Disable auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Display red dots while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
-# Load oh-my-zsh plugins
-plugins=(history-substring-search osx brew gitfast npm pip encode64 urltools)
-
-source $ZSH/oh-my-zsh.sh
-
 # Include functions
 if [ -f ~/.functions ]; then
   source ~/.functions
