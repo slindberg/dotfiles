@@ -1,0 +1,7 @@
+#
+# Return whether the shell was started on a remote host or not
+#
+
+[[ -n $SSH_CLIENT || -n $SSH2_CLIENT ]]
+
+# vim: ft=sh
