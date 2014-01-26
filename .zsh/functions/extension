@@ -1,0 +1,7 @@
+#
+# Print the extension of a file given its full path
+#
+
+echo "${$(basename $1)##*.}"
+
+# vim: ft=zsh

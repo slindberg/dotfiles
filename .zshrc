@@ -1,7 +1,12 @@
-# Include functions
-if [ -f ~/.functions ]; then
-  source ~/.functions
-fi
+local zdotdir=~/.zsh
+
+# Add to function path
+fpath=($zdotdir/functions $fpath)
+
+# Setup auto-loading of functions
+for func in ${zdotdir}/functions/^_*(-.N:t); do
+  autoload -Uz $func
+done
 
 # Include aliases
 if [ -f ~/.aliases ]; then

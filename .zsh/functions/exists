@@ -1,0 +1,7 @@
+#
+# Shorthand for determining whether a command exists on the system
+#
+
+command -v "$1" > /dev/null
+
+# vim: ft=sh

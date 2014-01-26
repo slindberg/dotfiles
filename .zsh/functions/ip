@@ -1,0 +1,8 @@
+#
+# Print local network and external IP addresses
+#
+
+echo "Local:    $(ipconfig getifaddr en0)"
+echo "External: $(curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g')"
+
+# vim: ft=zsh

@@ -1,0 +1,7 @@
+#
+# Remove the newline character of the given file
+#
+
+perl -pi -e 'chomp if eof' $1
+
+# vim: ft=sh

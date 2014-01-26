@@ -1,0 +1,14 @@
+#
+# Print the number of files/dirs in the given directory
+#
+
+local dir=$1
+: ${dir:="."}
+local list="ls -l \"$dir\" | grep -v '^total'"
+local count="wc -l | awk '{ print \$1 }'"
+
+echo "Files: $(eval "$list | grep -v '^d' | $count")"
+echo "Dirs:  $(eval "$list | grep '^d' | $count")"
+echo "Total: $(eval "$list | $count")"
+
+# vim: ft=zsh

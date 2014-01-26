@@ -1,0 +1,9 @@
+#
+# Change to a temp directory
+#
+
+local dir=$TMPDIR
+: ${dir:="/tmp"}
+cd $dir
+
+# vim: ft=sh

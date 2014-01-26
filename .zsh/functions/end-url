@@ -1,0 +1,7 @@
+#
+# Resolve redirects and print the last non-30x URL
+#
+
+curl $1 --silent --location --head --output /dev/null --write-out 'Final URL: %{url_effective}'
+
+# vim: ft=sh

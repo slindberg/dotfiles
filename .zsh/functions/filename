@@ -1,0 +1,7 @@
+#
+# Print the name of a file (without extension) given its full path
+#
+
+echo "${$(basename $1)%.*}"
+
+# vim: ft=zsh
