@@ -58,6 +58,13 @@ fi
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 
+if [[ "$OSTYPE" == darwin* ]]; then
+  # Update Terminal.app's CWD after every command to support opening
+  # new tabs in the same directory
+  autoload add-zsh-hook
+  add-zsh-hook precmd terminal-cwd
+fi
+
 # Enable plugins installed with brew
 if exists 'brew'; then
   local brew_prefix=$(brew --prefix)
