@@ -23,10 +23,8 @@ alias ll='ls -lhA'
 # Git
 alias g=git
 
-# Always use MacVim if available
-if exists mvim; then
-  alias vim='mvim -v'
-fi
+# Make sure the correct version of Vim is used
+alias vim=$VIM_CMD
 
 # Force re-make
 alias fake='make clean && make'

@@ -34,8 +34,15 @@ fi
 
 export PATH
 
+# Always use MacVim if available
+if exists mvim; then
+  export VIM_CMD="mvim -v"
+else
+  export VIM_CMD="vim";
+fi
+
 # Default editor
-export EDITOR="vim"
+export EDITOR=$VIM_CMD
 
 # Default Pager
 export PAGER=less
