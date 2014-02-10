@@ -8,18 +8,20 @@ for func in ${zdotdir}/functions/^_*(-.N:t); do
   autoload -Uz $func
 done
 
-# Include environment variables
-[[ -s "$HOME/.env" ]] && source "$HOME/.env"
+# Add environment vars
+if [[ -f ~/.env ]]; then
+  source ~/.env
+fi
 
 # Include all brew-installed init scripts
-if  exists 'brew' && [ -d "$(brew --prefix)/etc/profile.d" ]; then
+if exists 'brew' && [[ -d $(brew --prefix)/etc/profile.d ]]; then
   for file in $(brew --prefix)/etc/profile.d/*; do
     source $file
   done
 fi
 
 # Add system specific paths
-if [ -f ~/.paths ]; then
+if [[ -f ~/.paths ]]; then
   while read dir; do
     if [ -d $dir ]; then
       PATH=$dir:$PATH
@@ -28,7 +30,7 @@ if [ -f ~/.paths ]; then
 fi
 
 # Custom scripts
-if [ -d ~/.scripts ]; then
+if [[ -d ~/.scripts ]]; then
   PATH=~/.scripts:$PATH
 fi
 
@@ -44,7 +46,7 @@ fi
 # Default editor
 export EDITOR=$VIM_CMD
 
-# Default Pager
+# Default pager
 export PAGER=less
 
 # Default less options, the FX causes short files to be displayed inline
