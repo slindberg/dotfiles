@@ -36,6 +36,11 @@ fi
 
 export PATH
 
+# At this point, exit if not interactive
+if [[ $TERM == 'dumb' ]]; then
+  exit
+fi
+
 # Always use MacVim if available
 if exists mvim; then
   export VIM_CMD="mvim -v"
