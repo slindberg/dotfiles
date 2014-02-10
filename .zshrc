@@ -64,11 +64,15 @@ for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
 done
 eval RESET='$reset_color'
 
-# Fix using the special globbing character ^ (for git)
-unsetopt nomatch
+# Characters that at considered part of a word, default is *?_-.[]~=/&;!#$%^(){}<>
+WORDCHARS=${WORDCHARS//[&.;\/.]}
 
-# Don't add commands that begin with a space to the history
-setopt histignorespace
+# History
+if [ -z $HISTFILE ]; then
+  HISTFILE=~/.zsh_history
+fi
+HISTSIZE=1000
+SAVEHIST=$HISTSIZE
 
 # Stop trying to auto-correct git aliases
 alias git='nocorrect git'
