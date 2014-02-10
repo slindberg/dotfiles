@@ -58,6 +58,31 @@ fi
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 
+# Enable plugins installed with brew
+if exists 'brew'; then
+  local brew_prefix=$(brew --prefix)
+
+  # Add common zsh functions to function path
+  if [[ -d $brew_prefix/zsh/site-functions ]]; then
+    fpath=($brew_prefix/zsh/site-functions $fpath)
+  fi
+
+  # Add zsh-completions to function path
+  if [[ -d $brew_prefix/share/zsh-completions ]]; then
+    fpath=($brew_prefix/share/zsh-completions $fpath)
+  fi
+
+  # Source zsh-syntax-highlighting
+  if [[ -d $brew_prefix/share/zsh-syntax-highlighting ]]; then
+    source $brew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  fi
+
+  # Source zsh-history-substring-search
+  if [[ -d $brew_prefix/opt/zsh-history-substring-search ]]; then
+    source $brew_prefix/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+  fi
+fi
+
 # Source all .zsh files in zdotdir
 for file in ${zdotdir}/*.zsh; do
   source $file
