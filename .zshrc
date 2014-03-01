@@ -3,6 +3,9 @@ local zdotdir=~/.zsh
 # Add to function path
 fpath=($zdotdir/functions $fpath)
 
+# Needed for the globbing done below
+setopt extended_glob
+
 # Setup auto-loading of functions
 for func in ${zdotdir}/functions/^_*(-.N:t); do
   autoload -Uz $func
