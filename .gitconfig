@@ -22,7 +22,8 @@
   autosquash = true
 [push]
   # pushes current (tracking) branch to it's upstream branch without having to specify
-  default = upstream
+  # NOTE: this setting should ideally be 'simple', but it's not compatible with versions prior to v1.7.11
+  default = current
 [alias]
   # cloning
   cl = clone
