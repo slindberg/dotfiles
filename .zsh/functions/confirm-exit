@@ -1,0 +1,18 @@
+#
+# Prompts the user before exiting
+#
+
+print -P "\n%F{red}Press ENTER to logout%f"
+
+local reply
+read -sk reply
+
+if [[ $reply == $'\r' ]]; then
+  # Exit the shell cleanly
+  exit 0
+else
+  # Mimic ctrl-c to get a new prompt
+  kill -s INT $$
+fi
+
+# vim: ft=sh

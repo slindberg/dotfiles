@@ -20,9 +20,13 @@ setopt always_to_end           # Move cursor to the end of a completed word.
 # Miscellaneous
 unsetopt nomatch               # Fix using the special globbing character ^ (for git)
 setopt combining_chars         # Assume terminals display characters with accents correctly
+setopt ignore_eof              # Disable ctrl-d for exiting shell; let binding handle it
 
 
 # Addons
+
+# Create a ZLE widget using the confirm-exit function
+zle -N confirm-exit
 
 # Auto-escape shell special chars in URLs
 autoload -U url-quote-magic
