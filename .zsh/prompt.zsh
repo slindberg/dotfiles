@@ -26,7 +26,7 @@ zstyle ':git-info:added'     format '%F{green}●%f'       # %a
 zstyle ':git-info:deleted'   format '%F{red}●%f'         # %d
 zstyle ':git-info:renamed'   format '%F{green}∗%f'       # %r
 zstyle ':git-info:untracked' format '◦'                  # %u
-zstyle ':git-info:keys'      format 'prompt' '‹ $(coalesce "%b" "%p" "%c")%s$(coalesce "%X" "%A%B") %m%a%d%U%r%u'
+zstyle ':git-info:keys'      format 'prompt' '‹ $(coalesce "%b" "%p" "%c")%s$(coalesce "%X" "%A%B")%S %m%a%d%U%r%u'
 
 # Prompt sub components
 local remote_host; remote && remote_host='%F{blue}remote%f » '
