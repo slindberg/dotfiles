@@ -2,12 +2,16 @@
 # Prompts the user before exiting
 #
 
-print -P "\n%F{red}Press ENTER to logout%f"
+print -P "\n%F{red}Press ENTER to ${jobstates:+"kill all running jobs and "}exit%f"
 
 local reply
 read -sk reply
 
 if [[ $reply == $'\r' ]]; then
+  # Kill any running jobs
+  kill %${^${(k)jobstates}}
+  wait
+
   # Exit the shell cleanly
   exit 0
 else
@@ -15,4 +19,4 @@ else
   kill -s INT $$
 fi
 
-# vim: ft=sh
+# vim: ft=zsh
