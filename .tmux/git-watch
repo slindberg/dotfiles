@@ -1,0 +1,14 @@
+# This is called from a script, so start a new window with an interactive shell
+new-window
+
+# Split horizontally and start git status
+select-pane -t 1
+split-window -h -p 50 "fswatch --print0 .gitwatch | xargs -0 -n1 $SHELL -c 'clear; git status'"
+
+# Split right pane vertically and start git log
+select-pane -t 2
+split-window -v -p 50 "fswatch --print0 .gitwatch | xargs -0 -n1 $SHELL -c \"clear; git --no-pager log -10 --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s'\""
+
+# Focus left pane and start watching the project
+select-pane -t 1
+send-keys -t 1 'fswatch --one-per-batch --print0 --exclude "$CWD/.gitwatch" --exclude "$CWD/.git/index.lock" --latency 1 . | xargs -0 -n1 -I {} touch .gitwatch &' Enter 'touch .gitwatch' Enter 'clear' Enter
