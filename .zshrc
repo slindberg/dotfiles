@@ -87,8 +87,8 @@ if exists 'brew'; then
   local brew_prefix=$(brew --prefix)
 
   # Add common zsh functions to function path
-  if [[ -d $brew_prefix/zsh/site-functions ]]; then
-    fpath=($brew_prefix/zsh/site-functions $fpath)
+  if [[ -d $brew_prefix/zsh/share/site-functions ]]; then
+    fpath=($brew_prefix/zsh/share/site-functions $fpath)
   fi
 
   # Add zsh-completions to function path
