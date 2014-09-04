@@ -1,0 +1,20 @@
+#
+# Continue executing a command at intervals
+#
+
+local -a opts
+zparseopts -D -E -A opts i: h+
+
+if (( $# < 1 || ${+opts[-h]} )); then
+  print -P "%F{green}Usage: watch [-i <interval>] <command>%f"
+  return 1
+fi
+
+while :; do
+  clear;
+  print -P "%F{yellow}$@%f: %F{cyan}$(date)%f"
+  "$@";
+  sleep ${opts[-i]:-1};
+done
+
+# vim: ft=sh
