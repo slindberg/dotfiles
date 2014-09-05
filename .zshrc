@@ -58,7 +58,7 @@ export EDITOR=$VIM_CMD
 export PAGER=less
 
 # Default less options, the FX causes short files to be displayed inline
-export LESS=-iFXRx4
+export LESS=-iFXRx2
 
 # Add lesspipe.sh if available
 if exists lesspipe.sh; then
