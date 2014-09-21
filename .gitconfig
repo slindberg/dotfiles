@@ -96,4 +96,5 @@
   sh = show
   l = log --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s%n'
   ls = log -n 12 --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s%n'
+  lss = log -9 --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s'
   wc = whatchanged -n 1

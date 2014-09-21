@@ -1,14 +1,20 @@
 #
-# Start a tmux session using the 'gitwatch' script
+# Start watching files in the current directory
 #
 
-# Create a session name unique to the CWD
-local session="gitwatch-`pwd`"
+local -a opts
+zparseopts -D -E -A opts l: h+
 
-# Replace dots with underscores since they are not allowed in session names
-session=${session//./_}
+if (( $# < 1 || ${+opts[-h]} )); then
+  print -P "%F{green}Usage: git-watch [-l <latency>] <command>%f"
+  return 1
+fi
 
-# Attach to the session if it already exists, otherwise start it
-tmux new-session -A -s "$session" "tmux source-file ~/.tmux/git-watch"
+fswatch --latency ${opts[-l]:-.5} \
+  --one-per-batch \
+  --print0 \
+  --exclude "$CWD/.gitwatch" \
+  --exclude "$CWD/.git/index.lock" \
+  . | xargs -0 -n1 -n1 $SHELL -c "clear; git --no-pager $1"
 
 # vim: ft=sh

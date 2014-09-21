@@ -1,0 +1,14 @@
+#
+# Start a tmux session using the 'gitwatch' script
+#
+
+# Create a session name unique to the CWD
+local session="gitwatch-`pwd`"
+
+# Replace dots with underscores since they are not allowed in session names
+session=${session//./_}
+
+# Attach to the session if it already exists, otherwise start it
+tmux new-session -A -s "$session" "tmux source-file ~/.tmux/git-watch"
+
+# vim: ft=sh
