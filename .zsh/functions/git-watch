@@ -10,11 +10,15 @@ if (( $# < 1 || ${+opts[-h]} )); then
   return 1
 fi
 
+local excludes=""
+if [[ -f ".gitignore" ]]; then
+  for pathname (`cat .gitignore`) excludes+=" --exclude '${(S)${pathname/#\//}/\//\\/}'"
+fi
+
 fswatch --latency ${opts[-l]:-.5} \
   --one-per-batch \
   --print0 \
-  --exclude "$CWD/.gitwatch" \
-  --exclude "$CWD/.git/index.lock" \
+  --exclude ".git/index.lock" $excludes \
   . | xargs -0 -n1 -n1 $SHELL -c "clear; git --no-pager $1"
 
 # vim: ft=sh
