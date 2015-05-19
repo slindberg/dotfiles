@@ -1,6 +1,4 @@
 # Global
-alias -g ...='../..'
-alias -g ....='../../..'
 alias -g G='| grep'
 alias -g H='| head -n 30'
 alias -g L='| less'
@@ -11,9 +9,6 @@ alias -g WC='| wc'
 # Navigation
 alias -- -='cd -'
 alias ~='cd ~'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 
 # Listing
 alias ls='ls -G'

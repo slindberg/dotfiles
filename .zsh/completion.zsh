@@ -16,7 +16,31 @@ function expand-or-complete-with-dots() {
   zle redisplay
 }
 zle -N expand-or-complete-with-dots
-bindkey "^I" expand-or-complete-with-dots
+bindkey '^I' expand-or-complete-with-dots
+
+function dots-to-cd() {
+  setopt local_options extended_glob
+  local command=$1
+
+  # Look for at least two leading dots, optionally followed by a slash
+  if [[ $command =~ '^\.(\.+)(/.*)?$' ]]; then
+    command="cd ${${match[1]//./../}%/}$match[2]"
+  fi
+
+  print $command
+}
+
+function replace-dots-with-cd() {
+  local -a command_line
+  command_line=( ${(z)BUFFER} )
+
+  # Dots expansion is only valid when there are no arguments
+  if (( ${#command_line} == 1 )); then
+    BUFFER=$(dots-to-cd ${command_line[1]})
+  fi
+  zle ".$WIDGET"
+}
+zle -N accept-line replace-dots-with-cd
 
 # Use caching
 zstyle ':completion::complete:*' use-cache on
