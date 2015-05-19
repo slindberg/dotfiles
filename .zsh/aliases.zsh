@@ -39,3 +39,8 @@ alias listen='lsof -i | grep LISTEN'
 
 # List human readable size of files and dirs in cwd
 alias duch='du -csh *'
+
+# JavaScript package managers >:U
+alias nom='npm cache clear&& rm -rf node_modules && npm install'
+alias bom='bower cache clean && rm -rf bower_components && bower install'
+alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
