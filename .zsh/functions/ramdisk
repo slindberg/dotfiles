@@ -1,0 +1,33 @@
+#
+# Creates and mounts a ramdisk
+#
+
+local name
+local megabytes=1024
+local block_size=512
+local blocks
+local mount_path
+local cmd
+
+if (( $# < 1 )); then
+  echo "Usage: ramdisk <name> [<megabytes>]"
+fi
+
+name=$1
+
+if (( $# > 1)); then
+  megabytes=$2
+fi
+
+(( blocks = $megabytes * 1024 * 1024 / $block_size ))
+
+cmd=(hdiutil attach -nomount ram://$blocks)
+echo "$cmd\n"
+# xargs trims trailing whitespace >:U
+mount_path=$($cmd | xargs)
+
+cmd=(diskutil erasevolume HFS+ $name $mount_path)
+echo "$cmd"
+$cmd
+
+# vim: ft=zsh
