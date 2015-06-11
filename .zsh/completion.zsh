@@ -25,6 +25,8 @@ function dots-to-cd() {
   # Look for at least two leading dots, optionally followed by a slash
   if [[ $command =~ '^\.(\.+)(/.*)?$' ]]; then
     command="cd ${${match[1]//./../}%/}$match[2]"
+  elif [[ $command == '-' ]]; then
+    command='\-'
   fi
 
   print $command
