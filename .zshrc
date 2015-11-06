@@ -86,6 +86,12 @@ if [[ "$OSTYPE" == darwin* ]]; then
   add-zsh-hook precmd terminal-cwd
 fi
 
+
+# Source all .zsh files in zdotdir
+for file in ${zdotdir}/*.zsh; do
+  source $file
+done
+
 # Enable plugins installed with brew
 if exists 'brew'; then
   local brew_prefix=$(brew --prefix)
@@ -109,9 +115,10 @@ if exists 'brew'; then
   if [[ -d $brew_prefix/opt/zsh-history-substring-search ]]; then
     source $brew_prefix/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
   fi
-fi
 
-# Source all .zsh files in zdotdir
-for file in ${zdotdir}/*.zsh; do
-  source $file
-done
+  # Add fzf functions and key bindings
+  if [[ -d $brew_prefix/opt/fzf ]]; then
+    source $brew_prefix/opt/fzf/shell/completion.zsh
+    source $brew_prefix/opt/fzf/shell/key-bindings.zsh
+  fi
+fi
