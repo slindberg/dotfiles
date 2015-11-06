@@ -35,3 +35,6 @@ zle -N self-insert url-quote-magic
 # Allow command line editing in an external editor.
 autoload -Uz edit-command-line
 zle -N edit-command-line
+
+# Add 'zmv' command for globbed moves
+autoload -U zmv
