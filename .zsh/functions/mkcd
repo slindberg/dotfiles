@@ -1,0 +1,7 @@
+#
+# Creates a directory and navigates to it immediately
+#
+
+command mkdir $1 && cd $1
+
+# vim: ft=sh
