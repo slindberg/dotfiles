@@ -15,6 +15,9 @@ alias ls='ls -G'
 alias l='ls -lh'
 alias ll='ls -lhA'
 
+# Permissions
+alias chr='chmod -R u+rwX,go+rX,go-w /path'
+
 # Git
 alias g=git
 
@@ -41,6 +44,6 @@ alias listen='lsof -i | grep LISTEN'
 alias duch='du -csh *'
 
 # JavaScript package managers >:U
-alias nom='npm cache clear&& rm -rf node_modules && npm install'
+alias nom='npm cache clear && rm -rf node_modules && npm install'
 alias bom='bower cache clean && rm -rf bower_components && bower install'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
