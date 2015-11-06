@@ -69,8 +69,9 @@
   cpc = cherry-pick --continue
   cpa = cherry-pick --abort
   # remotes
-  rp = remote prune origin
-  rs = remote show origin
+  roa = remote add
+  rop = remote prune origin
+  ros = remote show origin
   # submodules
   sma = submodule add
   smi = submodule init
@@ -92,6 +93,9 @@
   # fetching/pulling/pushing
   f = fetch
   p = pull
+  u = push
+  uu = push -u
+  uf = push -f
   # viewing
   st = status
   sh = show
@@ -100,3 +104,6 @@
   lss = log -9 --pretty=format:'%C(yellow)%h %Cred%an %Cgreen%ar%n        %Creset%s'
   lpf = log --patch --follow
   wc = whatchanged -n 1
+  wt = worktree
+  wta = worktree add
+  wtp = worktree prune
