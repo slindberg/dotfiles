@@ -16,6 +16,12 @@ if [[ -f ~/.env ]]; then
   source ~/.env
 fi
 
+# Ensure no duplicates in path var
+typeset -U path
+
+# Make sure /usr/local is in path
+path=(/usr/local/bin "$path[@]")
+
 # Include all brew-installed init scripts
 if exists 'brew' && [[ -d $(brew --prefix)/etc/profile.d ]]; then
   for file in $(brew --prefix)/etc/profile.d/*; do
@@ -27,17 +33,15 @@ fi
 if [[ -f ~/.paths ]]; then
   while read dir; do
     if [ -d $dir ]; then
-      PATH=$dir:$PATH
+      path+=$dir
     fi
   done < ~/.paths
 fi
 
 # Custom scripts
 if [[ -d ~/.scripts ]]; then
-  PATH=~/.scripts:$PATH
+  path+=~/.scripts
 fi
-
-export PATH
 
 # At this point, exit if not interactive
 if [[ $TERM == 'dumb' ]]; then
