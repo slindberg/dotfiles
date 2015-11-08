@@ -14,7 +14,7 @@ alias ~='cd ~'
 # Listing
 alias ls='ls -G'
 alias l='ls -lh'
-alias ll='ls -lhA'
+alias la='ls -lhA'
 
 # Permissions
 alias chr='chmod -R u+rwX,go+rX,go-w /path'
