@@ -79,13 +79,17 @@ fi
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 
+# Use the java_home command if available to find the latest JRE
+if [[ -x /usr/libexec/java_home ]]; then
+  export JAVA_HOME=`/usr/libexec/java_home`
+fi
+
 if [[ "$OSTYPE" == darwin* ]]; then
   # Update Terminal.app's CWD after every command to support opening
   # new tabs in the same directory
   autoload add-zsh-hook
   add-zsh-hook precmd terminal-cwd
 fi
-
 
 # Source all .zsh files in zdotdir
 for file in ${zdotdir}/*.zsh; do
