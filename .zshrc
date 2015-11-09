@@ -76,7 +76,7 @@ WORDCHARS=${WORDCHARS//[&.;\/.]}
 if [ -z $HISTFILE ]; then
   HISTFILE=~/.zsh_history
 fi
-HISTSIZE=1000
+HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 
 # Use the java_home command if available to find the latest JRE
