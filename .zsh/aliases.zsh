@@ -17,7 +17,7 @@ alias l='ls -lh'
 alias la='ls -lhA'
 
 # Permissions
-alias chr='chmod -R u+rwX,go+rX,go-w /path'
+alias chr='chmod -R u+rwX,go+rX,go-w'
 
 # Git
 alias g=git
