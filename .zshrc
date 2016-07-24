@@ -19,15 +19,15 @@ fi
 # Ensure no duplicates in path var
 typeset -U path
 
-# Make sure /usr/local is in path
-path=(/usr/local/bin "$path[@]")
-
 # Include all brew-installed init scripts
 if exists 'brew' && [[ -d $(brew --prefix)/etc/profile.d ]]; then
   for file in $(brew --prefix)/etc/profile.d/*; do
     source $file
   done
 fi
+
+# Make sure /usr/local is in path
+path+=/usr/local/bin
 
 # Add system specific paths
 if [[ -f ~/.paths ]]; then
