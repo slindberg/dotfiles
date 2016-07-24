@@ -118,6 +118,9 @@ if exists 'brew'; then
   # Source zsh-history-substring-search
   if [[ -d $brew_prefix/opt/zsh-history-substring-search ]]; then
     source $brew_prefix/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+    # Don't show duplicate history entries in reverse search
+    export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE="true"
   fi
 
   # Add fzf functions and key bindings
