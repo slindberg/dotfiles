@@ -29,8 +29,6 @@ bindkey "$keyinfo[Control]R"  history-incremental-search-backward  # Search back
 bindkey "$keyinfo[Control]L"  clear-screen                         # Clear the screen
 bindkey "$keyinfo[Control]Q"  push-line-or-edit                    # Save the current command in the buffer stack
 bindkey "$keyinfo[Control]X"  edit-command-line                    # Open the current command in an editor
-bindkey "$keyinfo[Control]P"  history-substring-search-up          # History-substring search backward
-bindkey "$keyinfo[Control]N"  history-substring-search-down        # History-substring search forward
 bindkey "$keyinfo[Control]D"  confirm-exit                         # Confirm before exiting shell
 
 bindkey ' '                   magic-space                          # History expansion
