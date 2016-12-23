@@ -5,6 +5,9 @@ alias -g H='| head -n 30'
 alias -g L='| less'
 alias -g T='| tail -n 30'
 alias -g TF='| tail -f'
+alias -g S='| gsort'
+alias -g SN='| gsort -n'
+alias -g SH='| gsort -h'
 alias -g WC='| wc'
 
 # Navigation
