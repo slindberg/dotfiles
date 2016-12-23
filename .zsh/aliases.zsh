@@ -42,7 +42,7 @@ alias tree='tree -C --dirsfirst'
 alias listen='lsof -i | grep LISTEN'
 
 # List human readable size of files and dirs in cwd
-alias duch='du -csh *'
+alias duch='du -csh -- *(D)'
 
 # JavaScript package managers >:U
 alias nom='npm cache clear && rm -rf node_modules && npm install'
