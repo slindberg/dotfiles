@@ -8,6 +8,7 @@ unsetopt flow_control          # Disable ctrl-s/ctrl-q for stopping/starting out
 setopt extended_history        # Save timestamps along with history items
 setopt hist_expire_dups_first  # Trim duplicate commands from history before uniques
 setopt hist_ignore_dups        # Don't add a command that is a duplicate of the previous command
+setopt hist_find_no_dups       # Don't find duplicates in reverse-search
 setopt hist_ignore_space       # Don't add commands that begin with a space to history
 setopt hist_verify             # Don't automatically execute commands with history expansion
 setopt inc_append_history      # Append to history file as commands are executed, instead of on exit
