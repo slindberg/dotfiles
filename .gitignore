@@ -13,7 +13,8 @@
 .*hist
 .*hst
 
-# Vim files
+# Editor files
+.atom
 .vim
 .vimrc
 .gvimrc
